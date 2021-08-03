@@ -26,3 +26,29 @@ function highlight(text) {
 let myStr = 'Eat a rug and furry furry hairs everywhere oh no human coming lie on counter';
 
 console.log(myStr.replace('furry', 'rainbow'));
+
+
+
+//find and replace
+const findAndReplace = (event) => {
+    event.preventDefault()
+    const findAndReplaceElement = document.getElementById('find-replace-text')
+    const find = document.getElementById('text-find').value
+    const replace = document.getElementById('text-replace').value
+    const expression = new RegExp(find, 'gi')
+    console.log(expression)
+    findAndReplaceElement.innerText = findAndReplaceElement.innerText.replaceAll(expression, replace)
+}
+
+
+//Map Scroll to Delete Words
+
+const scrolling= (event) => {
+  console.log(event.target.innerText)
+    let arrayOfText = event.target.innerText.split(' ')
+    console.log(event)
+ console.log(arrayOfText)
+    arrayOfText.pop()
+ console.log(arrayOfText)
+    event.target.innerText = arrayOfText.join (' ')
+}
